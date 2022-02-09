@@ -24,7 +24,7 @@
 			
 			// 수정 
 			$(".update_btn").on("click", function(){
-				formObj.attr("action", "/notice/updateView");
+				formObj.attr("action", "/allCar/notice/updateView");
 				formObj.attr("method", "get");
 				formObj.submit();				
 			})
@@ -35,7 +35,7 @@
 				
 				if(deleteYN == true){
 				
-				formObj.attr("action", "/notice/delete");
+				formObj.attr("action", "/allCar/notice/delete");
 				formObj.attr("method", "post");
 				formObj.submit();
 				}
@@ -82,8 +82,7 @@
 						<tr>
 							<td class="t_num">
 								<label for="content">&nbsp;&nbsp;내용</label>
-								<textarea id="content" name="content" readonly="readonly">
-								<c:out value="${read.content}" /></textarea>
+								<textarea id="content" name="content" readonly="readonly"><c:out value="${read.content}" /></textarea>
 							</td>
 						</tr>
 						<tr>

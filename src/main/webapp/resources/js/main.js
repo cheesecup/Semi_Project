@@ -1,7 +1,7 @@
 var imgArray = new Array();
 imgArray[0] = "resources/image/m1.PNG";
 imgArray[1] = "resources/image/m2.PNG";
-imgArray[2] = "resources/image/m3.PNG";
+imgArray[2] = "resources/image/m3.PNG"; 
 
 var obTimeOut;
 
