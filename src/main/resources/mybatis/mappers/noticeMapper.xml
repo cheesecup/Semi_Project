@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="noticeMapper">
+   
+   <!-- 게시판 글 작성 -->
+   <insert id="insert">
+	   INSERT INTO NOTICE(    BNO 
+	   					      , TITLE 
+	   					      , CONTENT 
+	   					      , ID  )
+	                 VALUES(    NOTICE_SEQ.NEXTVAL 
+	                 		  , #{title}
+	                 		  , #{content}
+	                 		  , #{id}  )
+   
+   </insert>
+   
+   <select id="listPage" resultType="com.myspring.allCar.board.notice.vo.NoticeVO" 
+   								parameterType="com.myspring.allCar.board.notice.vo.SearchCriteria">
+		SELECT   BNO
+			   , TITLE
+			   , CONTENT
+			   , ID
+			   , REGDATE
+		  FROM (
+		  		SELECT BNO
+			   		, TITLE
+			   		, CONTENT
+			   		, ID
+			   		, REGDATE
+			   		, ROW_NUMBER() OVER(ORDER BY BNO DESC) AS RNUM
+			   	FROM NOTICE
+			   	WHERE 1=1
+			   		<include refid="search"></include> ) 
+		  WHERE RNUM BETWEEN #{rowStart} AND #{rowEnd}
+		  ORDER BY BNO DESC
+	</select>
+	
+	<select id="listCount" parameterType="com.myspring.allCar.board.notice.vo.SearchCriteria" resultType="int">
+	
+		SELECT COUNT(BNO)
+		FROM NOTICE
+		WHERE 1=1
+	  <include refid="search"></include>
+	    AND BNO>0	
+	</select>
+	
+	<select id="read" parameterType="int" resultType="com.myspring.allCar.board.notice.vo.NoticeVO">
+		SELECT		BNO
+				, TITLE
+				,CONTENT
+				,ID
+				,REGDATE
+			FROM NOTICE
+			WHERE BNO = #{bno}
+	</select>
+	
+	<sql id="search">
+		<if test="searchType != null">
+			<if test="searchType == 't'.toString()">AND TITLE LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'c'.toString()">AND CONTENT LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'w'.toString()">AND ID LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'tc'.toString()">AND (TITLE LIKE '%' || #{keyword} || '%') or (CONTENT LIKE '%' || #{keyword} || '%')</if>
+		</if>
+	</sql>
+	
+	<update id="update" parameterType="com.myspring.allCar.board.notice.vo.NoticeVO">
+		UPDATE NOTICE
+			SET TITLE   = #{title},
+				CONTENT = #{content}
+			WHERE BNO = #{bno}	
+	</update>
+	
+	<delete id="delete" parameterType = "int">
+		DELETE
+			FROM NOTICE
+			WHERE BNO = #{bno}
+	</delete>
+	
+</mapper>

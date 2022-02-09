@@ -1,0 +1,474 @@
+#logo {
+    text-align: center;
+}
+
+#logo_m {
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+#nav_a, #nav_b, #nav_c, #nav_d, #nav_e, #nav_f, #nav_g {
+    /* border: 5px solid gray; */
+    font-size: 22px; 
+    text-align: center;
+}
+
+#nav_whole {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    display: grid;
+    padding: 20px 0 20px 0;
+}
+
+#nav_grid {
+    margin: 5px 0 5px 0 solid gray;
+}
+
+#ad_image {
+    text-align: center;
+    padding: 20px 0 30px 0;
+}
+
+#grayZone {
+    margin: 20px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+#chooseBox {
+ padding-left: 60px;
+ margin-bottom: 10px;
+}
+
+#chooseBox a {
+    color: #555;
+    text-decoration-line: none;
+}
+
+.boxes {
+    padding: 0 10px;
+    font-style: border;
+    font-size: 25px;
+}
+
+#optionBox {
+    padding: 40px 0px 30px 0px;
+    font-size: 15px;
+    width: 1200px;
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 30px;    
+    border: 1px solid gray;
+}
+
+select {
+    width: 180px;
+    height: 40px;
+    font-size: 22px;
+    border-radius: 5px;
+    border: none;
+    background: #f2f2f2;
+}
+
+#opt_txt {
+    width: 250px;
+    height: 35px;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+#opt_btn {
+    width: 120px;
+    height: 42px;
+    font-size: 22px;
+    background: #dc232d;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+#weekly {
+    text-align: center;
+    font-size: 32px;
+    padding: 100px 0 0 0;
+}
+
+#count {
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 30px;
+}
+
+#cars_align {
+    margin-bottom: 100px;
+}
+
+#weekly_cars {
+    width: 1500px;
+    height: 340px;
+    border: 1px solid #888;
+    margin: 10px auto;
+    padding: 5px;
+    zoom: 1;
+   text-align: center;
+   list-style: none
+}
+
+#weekly_cars:after {
+    content: '';
+    display: block;
+    clear: both;
+    
+}
+
+#weekly_cars li{
+    float: left;
+    width: 280px;
+    height: 360px;
+    margin: 8px;
+    
+}
+
+#weekly_cars li a {
+    display: block;
+    color: #FFF;
+    text-decoration-line: none;
+}
+
+#weekly_cars li a .cars {
+    display: block;
+
+}
+
+#weekly_cars li a em {
+    display: block;
+    padding: 5px 0;
+    background-color: #888;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 1.5;
+    
+
+}
+
+#purpleBox {
+    background-color: #f5f6f9;
+    padding: 50px;
+    width: 1500px;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#findingStore {
+    text-align: center;
+    font-size: 30px;
+    padding: 30px 0;
+}
+
+#location {
+    list-style: none;
+    height: 30px;
+    padding: 10px 5px;
+    margin: 0 0 50px 0;
+    border-bottom: 1px solid darkgray;
+}
+
+#location li { /*전체 메뉴의 리스트 스타일*/
+    float: left;
+    position: relative;
+    padding: 0 30px;
+    margin: 5px 30px;
+    color: black;
+}
+
+#location li a { /*메인 메뉴 링크 스타일*/
+    display: block;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+}
+
+#location li:hover >a { /*메인메뉴 링크에 마우스 올렸을 때*/
+    color: #da2432;
+    margin: 0;
+}
+
+#location ul { /*서브메뉴 스타일*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0; /*부모요소와 왼쪽 좌표값을 같게 한다*/
+    top: 40px; /*부모 요소로부터 40px 아래에 표시*/
+    width: 1200px;
+    text-align: center;
+    opacity: 0; /*투명하게 표시되도록 해서 평소에 안보이도록*/
+}
+
+#location ul li { /*서브메뉴 리스트 스타일*/
+    float: left;
+    margin: 0;
+    padding: 8px 5px;
+    font-size: 15px;
+}
+
+#location ul a { /*서브메뉴 리스트 링크 스타일*/
+    font-weight: normal;
+    color: black;
+    font-size: 18px;
+}
+
+#location ul li:hover a { /*서브메뉴 리스트 호버 스타일*/
+    font-weight: bold;
+}
+
+#location li:hover ul { /*메인메뉴에 마우스 가져갔을 때 서브메뉴 스타일*/
+    opacity: 1;
+}
+
+#location li:hover ul li { /*마우스 포인터 올려놨을 때 서브메뉴 스타일*/
+    height: 35px;
+    overflow: visible;
+}
+
+#whiteBox {
+    background-color: white;
+    padding: 40px;
+    grid-template-columns: 300px 600px 400px;
+    display: grid;
+    align-content: center;
+}
+
+#img_store {
+    padding: 30px;
+}
+
+#info_store {
+    padding: 15px;
+    float: left;
+    color: black;
+}
+
+#btn_store {
+    padding: 30px;
+}
+
+#btn_store11 {
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 8px;
+    width: 200px;
+    margin: 5px;
+    outline: none;
+    background-color: #dc232d;
+    color: white;
+    border: 1px solid #6e6969dc;
+}
+
+#btn_store1 {
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 8px;
+    width: 200px;
+    margin: 5px;
+    outline: none;
+    background-color: white;
+    border: 1px solid #6e6969dc;
+}
+
+#notice {
+    border-right:1px solid gray;
+    border-left:1px solid gray;
+    padding-left: 60px;
+}
+
+#info_menu {
+    display: inline;
+}
+
+#info_list li a {
+    text-decoration-line: none;
+    color: #555;
+}
+
+#info_plus {
+    float: right;
+    margin-right: 50px;
+}
+
+#info_plus a {
+    text-decoration-line: none;
+}
+
+#info_align {
+    display: flex;
+    justify-content: center;
+}
+
+#info_sum {
+    grid-template-columns: 400px 550px 400px;
+    display: grid;
+    padding: 30px 120px;
+}
+
+#icons {
+    margin: 30px;
+    padding: 20px;
+}
+
+#icon_r {
+    margin-left: 30px;
+}
+
+footer {
+    color: #6e6969dc;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.foot_menu {
+    display: inline-block;
+}
+
+.foot_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: max-content;  
+}
+
+.foot_list_item {
+    float: left;
+}
+
+.foot_list_item a{
+    display: block;
+    color: #6e6969dc;
+    margin-left: 100px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footer_text {
+    display: inline-block;
+    width: max-content;
+}
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;   
+}
+
+.nav_menu {
+    background-color: #dc232d;
+}
+
+.cen {
+    text-align: center;
+    margin-right: 5%;
+}
+
+.menu {
+    display: inline-block;
+}
+
+.menu_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: max-content;  
+}
+
+.menu_list_item {
+    float: left;
+    width: max-content;
+}
+
+.menu_list_item > a, .menu_list_item > span {
+    display: block;
+    color: white;
+    padding: 10px;
+    margin-left: 100px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dropdown-contents {
+    display: none;
+    position: absolute;
+    background-color: #dc232d;
+    min-width: 130px;
+    padding: 8px;
+    text-align: left;
+    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+    /* border: 3px solid black; */
+    border-radius: 5px;
+}
+
+.dropdown-contents > a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.dropdown:hover .dropdown-contents {
+    display: block;
+}
+
+footer {
+    color: #6e6969dc;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.foot_cen {
+    text-align: center;
+}
+
+.foot_menu {
+    display: inline-block;
+}
+
+.foot_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: max-content;  
+}
+
+.foot_list_item {
+    float: left;
+}
+
+.foot_list_item a{
+    display: block;
+    color: #6e6969dc;
+    margin-left: 100px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footer_text {
+    display: inline-block;
+    width: max-content;
+}
+
+.list_clicked {
+    color: #dc232d;
+}

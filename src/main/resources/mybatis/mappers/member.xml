@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.member">
+	<resultMap id="memResult" type="memberVO">
+		<result property="name" column="name" />
+		<result property="id" column="id" />
+        <result property="pwd" column="pwd" />
+        <result property="emailId" column="emailId" />
+        <result property="emailAddress" column="emailAddress" />
+        <result property="phoneNum" column="phoneNum" />
+        <result property="birth_y" column="birth_y" />
+        <result property="birth_m" column="birth_m" />
+        <result property="birth_d" column="birth_d" />
+        <result property="gender" column="gender" />
+        <result property="postcode" column="postcode" />
+        <result property="address" column="address" />
+        <result property="detailAddress" column="detailAddress" />
+        <result property="marketingOk" column="marketingOk" />
+        <result property="noticeKinds" column="noticeKinds" />    
+        <result property="regdate" column="regdate" />
+	</resultMap> 
+	
+	<!-- 회원정보 출력 -->
+	<select id="selectAllMemberList" resultMap="memResult">
+      	<![CDATA[
+         	select * from site_member order by regdate desc	 	
+      	]]>
+	</select>
+    
+    <!-- 회원가입 정보 insert문 -->
+	<insert id="insertMember" parameterType="memberVO">
+		<![CDATA[
+		 	insert into site_member(name, id, pwd, emailId, emailAddress, phoneNum, birth_y, birth_m, birth_d, gender, postcode, address, detailAddress, marketingOk, noticeKinds)
+		 	values(#{name}, #{id}, #{pwd}, #{emailId}, #{emailAddress}, #{phoneNum}, #{birth_y}, #{birth_m}, #{birth_d}, #{gender}, #{postcode}, #{address}, #{detailAddress}, #{marketingOk}, #{noticeKinds})
+		]]>      
+	</insert>
+	
+   	<update id="updateMember" parameterType="memberVO">
+    	<![CDATA[
+	     	update site_member
+	     	set pwd=#{pwd}, emailId=#{emailId}, emailAddress=#{emailAddress}, phoneNum=#{phoneNum}
+	     	where
+	     	id=#{id}
+      	]]>      
+   	</update>
+     
+     <!-- 회원탈퇴 -->
+	<delete id="deleteMember" parameterType="String">
+		<![CDATA[
+	   		delete from site_member
+	   		where
+	   		id=#{id}
+		]]>      
+ 	</delete>
+  	
+  	<!-- 로그인 정보 보내기 -->
+  	<select id="loginById" resultType="memberVO" parameterType="memberVO" >
+		<![CDATA[
+			select * from site_member	
+			where id=#{id} and pwd=#{pwd}		
+		]]>
+  	</select>
+  	
+  	<!-- 아이디 중복체크 쿼리문, 아이디 중복=true, 아이디 사용 가능=false -->
+  	<select id="checkID" parameterType="String" resultType="String">
+	   select decode(count(*),1, 'true', 0, 'false') from site_member where id = #{id}
+	</select>
+</mapper>

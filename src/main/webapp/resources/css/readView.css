@@ -1,0 +1,62 @@
+#t_notice {
+	width: 200px;
+	position: absolute;
+	left: 20%;
+	font-size: 35px;
+}
+
+#t_link {
+	width: 200px;
+	position: absolute;
+	right: 18%;
+	font-size: 22px;
+	font-weight: bolder;
+}
+
+#t_link a {
+	text-decoration: none;
+	margin: 10px;
+}
+
+.t_num, .t_title, .t_id, .t_date, .t_content {
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+    font-size: 20px;
+    height: 40px;
+}
+
+#bno, #title, #id {
+	width: 800px;
+	height: 50px;
+	font-size: 20px;
+}
+
+#content {
+	width: 800px;
+	height: 400px;
+	font-size: 20px;
+}
+tbody {
+	swidth: 1000px;
+}
+
+#t_update_loc {
+	width: 1000px;
+	display: table;
+	margin: auto;
+}
+
+#t_read_btn {
+	width: 400px;
+	margin: auto;
+}
+
+.update_btn, .delete_btn, .list_btn {
+	width: 120px;
+    height: 42px;
+    font-size: 22px;
+    background: #dc232d;
+    border: none;
+    color: white;
+    border-radius: 8px;
+}

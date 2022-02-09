@@ -1,0 +1,246 @@
+html{
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif; 
+}
+
+#logo {
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+.nav_menu {
+    background-color: #dc232d;
+}
+
+.cen {
+    text-align: center;
+    margin-right: 5%;
+}
+
+.menu {
+    display: inline-block;
+}
+
+.menu_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: max-content;  
+}
+
+.menu_list_item {
+    float: left;
+    width: max-content;
+}
+
+.menu_list_item > a, span {
+    display: block;
+    color: white;
+    padding: 10px;
+    margin-left: 100px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dropdown-contents {
+    display: none;
+    position: absolute;
+    background-color: #dc232d;
+    min-width: 130px;
+    padding: 8px;
+    text-align: left;
+    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+    /* border: 3px solid black; */
+    border-radius: 5px;
+}
+
+.dropdown-contents > a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.dropdown:hover .dropdown-contents {
+    display: block;
+}
+
+footer {
+    color: #6e6969dc;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.foot_cen {
+    text-align: center;
+}
+
+.foot_menu {
+    display: inline-block;
+}
+
+.foot_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: max-content;  
+}
+
+.foot_list_item {
+    float: left;
+}
+
+.foot_list_item a{
+    display: block;
+    color: #6e6969dc;
+    margin-left: 100px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footer_text {
+    display: inline-block;
+    width: max-content;
+}
+
+.info {
+    display: inline-block; 
+    padding-top: 20px;
+}
+
+.info_list {
+    /* border: 1px solid black; */
+    width: 1260px;
+    height: 55px;
+    border-collapse: collapse;   
+}
+
+.info_list td {
+    border: 2px solid #cccccc;
+    width: 180px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.inner_text {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    min-height: 600px;
+    width: 1260px;
+    border: 2px solid #cccccc;
+}
+
+#question_btn {
+    width: 150px;
+    height: 55px;
+    margin-bottom: 25px;
+    border: 0;
+    border-radius: 30px;
+    outline: none;
+    background: rgb(230, 22, 22);
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+#t_notice {
+	width: 200px;
+	position: absolute;
+	left: 20%;
+	font-size: 35px;
+}
+
+#t_link {
+	width: 200px;
+	position: absolute;
+	right: 20%;
+	font-size: 22px;
+	font-weight: bolder;
+}
+
+#t_link a {
+	text-decoration: none;
+	margin: 10px;
+}
+
+#t_board {
+    border-collapse: collapse;
+    border: solid gray 2px;
+    width: 1200px;
+    margin: auto;
+}
+
+.t_nav {
+    background: #dc232d;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    height: 50px;
+}
+
+.t_num, .t_title, .t_id, .t_date {
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+    font-size: 20px;
+    height: 40px;
+}
+
+.t_title a {
+    text-decoration: none;
+}
+
+.box1, .box2, .box3 {
+	height: 40px;
+	font-size: 25px;
+	margin-top: 25px;
+	text-align: center;
+}
+
+#t_loc {
+	width: 600px;
+	margin: auto;
+}
+
+.t_page {
+	width: 400px;
+	margin: auto;
+	margin-top: 25px;
+}
+
+.t_page li {
+	font-size: 20px;
+	font-style: bold;
+}
+
+.box3 {
+	width: 120px;
+    height: 42px;
+    font-size: 22px;
+    background: #dc232d;
+    border: none;
+    color: white;
+    border-radius: 8px;
+}
+
+
+/* 선택박스 css */
+.list_clicked {
+    color: #dc232d;
+    background-color: #F3DEDE;
+}
