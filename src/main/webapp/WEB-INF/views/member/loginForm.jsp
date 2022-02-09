@@ -57,7 +57,7 @@
                     </div>
                     <div id="reg_div">
                         <span>아직 M Car 회원이 아니세요?</span>
-                        <span id="float_r"><a href="SignUp.html">회원가입</a></span>
+                        <span id="float_r"><a href="${contextPath}/member/signupForm.do">회원가입</a></span>
                     </div>
                     <div id="guest_search">
                         <span>내차팔기 신청내역을 조회하실 수 있습니다</span>
