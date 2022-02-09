@@ -21,7 +21,7 @@
 <body>
     <header>
         <div style="text-align: center;" id="logo">
-            <a href="main_login.html"><img src="${contextPath}/resources/image/로그인 로고(100x100).png" width="120px" height="120px"> </a>
+            <a href="${contextPath}/main.do"><img src="${contextPath}/resources/image/로그인 로고(100x100).png" width="120px" height="120px"> </a>
         </div>
 
         <nav class="nav_menu">
@@ -35,11 +35,22 @@
                         <li class="menu_list_item"><a href="#">위클리특가</a></li>
                         <li class="menu_list_item"><a href="board.html" style="text-decoration: underline;">게시판</a></li>
                         <li class="menu_list_item"><span class="dropdown">내계정
-                            <div class="dropdown-contents">
-                                <a href="main.html">로그아웃</a>
-                                <br>
-                                <a href="MyPage.html">마이페이지</a>
-                            </div>
+                            <c:choose>
+                                    	<c:when test="${isLogOn == true && member != null }">
+                                    		<div class="dropdown-contents">
+                                        		<a href="${contextPath}/member/logout.do">로그아웃</a>
+                                        		<br>
+                                        		<a href="${contextPath}/member/mypage.do">마이페이지</a>
+                                    		</div>
+                                    	</c:when>
+                                    	<c:otherwise>
+                                    		<div class="dropdown-contents">
+                                        		<a href="${contextPath}/member/loginForm.do">로그인</a>
+                                        		<br>
+                                        		<a href="${contextPath}/member/signupForm.do">회원가입</a>
+                                    		</div>
+                                    	</c:otherwise>
+                                    </c:choose>
                         </span>
                         </li>
                     </ul>

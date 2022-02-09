@@ -33,7 +33,7 @@
                         <li class="menu_list_item"><a href="#">금융</a></li>
                         <li class="menu_list_item"><a href="#">렌트</a></li>
                         <li class="menu_list_item"><a href="#">위클리특가</a></li>
-                        <li class="menu_list_item"><a href="board.html">게시판</a></li>
+                        <li class="menu_list_item"><a href="${contextPath}/notice/list">게시판</a></li>
 						<li class="menu_list_item"><span class="dropdown"
 							style="text-decoration: underline;">내계정 <c:choose>
 									<c:when test="${isLogOn == true && member != null }">

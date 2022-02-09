@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
 
 <div style="text-align: center;" id="logo">
-   <a href=#>
+   <a href="${contextPath}/main.do">
    <img src="${contextPath}/resources/image/logo(100x100).png" width="120px" height="120px"> </a>
 </div>
 
@@ -22,7 +22,25 @@
                         <li class="menu_list_item"><a href="#">렌트</a></li>
                         <li class="menu_list_item"><a href="#">위클리특가</a></li>
                         <li class="menu_list_item"><a href="/notice/list">게시판</a></li>
-                        <li class="menu_list_item"><a href="#">내계정</a></li>
+                        <li class="menu_list_item"><span class="dropdown">내계정
+                                    <c:choose>
+                                    	<c:when test="${isLogOn == true && member != null }">
+                                    		<div class="dropdown-contents">
+                                        		<a href="${contextPath}/member/logout.do">로그아웃</a>
+                                        		<br>
+                                        		<a href="${contextPath}/member/mypage.do">마이페이지</a>
+                                    		</div>
+                                    	</c:when>
+                                    	<c:otherwise>
+                                    		<div class="dropdown-contents">
+                                        		<a href="${contextPath}/member/loginForm.do">로그인</a>
+                                        		<br>
+                                        		<a href="${contextPath}/member/signupForm.do">회원가입</a>
+                                    		</div>
+                                    	</c:otherwise>
+                                    </c:choose>
+                                </span>
+                                </li>
                              <br>  
                       </div>
                         </span>
