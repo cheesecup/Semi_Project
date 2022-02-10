@@ -30,6 +30,7 @@ public class MemberControllerImpl implements MemberController {
 	@Autowired
 	private MemberVO memberVO;
 	
+	// 회원정보 리스트 요청,응답
 	@Override
 	@RequestMapping(value="/member/listMembers.do" ,method = RequestMethod.GET)
 	public ModelAndView listMembers(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -40,6 +41,7 @@ public class MemberControllerImpl implements MemberController {
 		return mav;
 	}
 	
+	// 회원가입 수행 
 	@Override
 	@RequestMapping(value = "/member/addMember.do", method = RequestMethod.POST)
 	public ModelAndView addMember(@ModelAttribute("member") MemberVO member, 
@@ -47,10 +49,11 @@ public class MemberControllerImpl implements MemberController {
 		request.setCharacterEncoding("utf-8");
 		int result = 0;
 		result = memberService.addMember(member);
-		ModelAndView mav = new ModelAndView("redirect:/member/listMembers.do");
+		ModelAndView mav = new ModelAndView("redirect:/main.do");
 		return mav;
 	}
 	
+	// 로그인 성공,실패 정보 세션에 저장
 	@Override
 	@RequestMapping(value = "/member/login.do", method = RequestMethod.POST)
 	public ModelAndView login(@ModelAttribute("member") MemberVO member,
@@ -75,6 +78,7 @@ public class MemberControllerImpl implements MemberController {
 	return mav;
 	}
 	
+	// 로그아웃 정보 세션에 저장
 	@Override
 	@RequestMapping(value = "/member/logout.do", method = RequestMethod.GET)
 	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -86,6 +90,7 @@ public class MemberControllerImpl implements MemberController {
 		return mav;
 	}
 	
+	// 회원탈퇴 후 로그아웃 
 	@Override
 	@RequestMapping(value = "/member/deleteMember.do", method = RequestMethod.POST)
 	public ModelAndView deleteMember(@ModelAttribute("member") MemberVO member, 
@@ -100,6 +105,7 @@ public class MemberControllerImpl implements MemberController {
 		return mav;
 	}
 	
+	// 회원정보 수정 요청, 응답
 	@Override
 	@RequestMapping(value = "/member/updateMember.do", method = RequestMethod.POST)
 	public ModelAndView updateMember(@ModelAttribute("member") MemberVO member, 
@@ -110,6 +116,7 @@ public class MemberControllerImpl implements MemberController {
 		return mav;
 	}
 	
+	// 아이디 중복 체크
 	@Override
 	@RequestMapping(value="/member/idcheck.do" ,method = RequestMethod.POST)
 	public ResponseEntity idcheck(@RequestParam("id") String id, HttpServletRequest request, HttpServletResponse response) throws Exception{
@@ -119,6 +126,7 @@ public class MemberControllerImpl implements MemberController {
 		return resEntity;
 	}
 	
+	// 메인 화면 view
 	@Override
 	@RequestMapping(value="/main.do" ,method = RequestMethod.GET)
 	public ModelAndView main(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -127,6 +135,7 @@ public class MemberControllerImpl implements MemberController {
 		return mav;
 	}
 	
+	// 마이페이지 화면 view
 	@Override
 	@RequestMapping(value="/member/mypage.do" ,method = RequestMethod.GET)
 	public ModelAndView mypage(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -135,6 +144,7 @@ public class MemberControllerImpl implements MemberController {
 		return mav;
 	}
 	
+	// *Form.do으로 요청에 응답
 	@RequestMapping(value = "/member/*Form.do", method= RequestMethod.GET)
 	public ModelAndView form(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName = getViewName(request);
@@ -143,6 +153,7 @@ public class MemberControllerImpl implements MemberController {
 		return mav;
 	}
 	
+	// 요청 받은 주소값 자르기
 	private String getViewName(HttpServletRequest request) throws Exception {
 		String contextPath = request.getContextPath();
 		String uri = (String) request.getAttribute("javax.servlet.include.request_uri");

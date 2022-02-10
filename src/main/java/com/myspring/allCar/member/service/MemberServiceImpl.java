@@ -12,10 +12,11 @@ import com.myspring.allCar.member.dao.MemberDAO;
 import com.myspring.allCar.member.vo.MemberVO;
 
 @Service("memberService")
-@Transactional(propagation = Propagation.REQUIRED)
+@Transactional(propagation = Propagation.REQUIRED) // 
 public class MemberServiceImpl implements MemberService{
 	@Autowired
 	private MemberDAO memberDAO;
+	
 
 	@Override
 	public List listMembers() throws DataAccessException {
