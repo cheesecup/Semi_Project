@@ -28,10 +28,10 @@ public class NoticeController {
 	
 	//게시판 글 작성 화면
 	@RequestMapping(value = "/notice/writeView", method = RequestMethod.GET)
-	public void writeView() throws Exception {
+	public String writeView() throws Exception {
 		
 		logger.info("writeView");
-		
+		return "allBoard/notice/writeView";
 	}
 	
 	//게시판 글 작성
@@ -60,7 +60,7 @@ public class NoticeController {
 		
 		model.addAttribute("pageMaker", pageMaker);
 		
-		return "notice/board";
+		return "allBoard/board";
 	}
 	
 	//게시판 조회
@@ -72,7 +72,7 @@ public class NoticeController {
 		model.addAttribute("read", service.read(noticeVO.getBno()));
 		model.addAttribute("scri", scri);
 		
-		return "notice/readView";
+		return "allBoard/notice/readView";
 		
 	}
 	
@@ -84,7 +84,7 @@ public class NoticeController {
 		model.addAttribute("update", service.read(noticeVO.getBno()));
 		model.addAttribute("scri", scri);
 			
-		return "notice/updateView";
+		return "allBoard/notice/updateView";
 		}
 	
 	//게시판 수정
